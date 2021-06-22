@@ -1,0 +1,13 @@
+
+    {
+      "firstName": "John",
+      "lastName": "wick",
+      "age": "32",
+      "favouriteColor": "Black",
+      "hobby": [
+        "Chess",
+        "Cricket",
+				"Kite"
+      ],
+      "state":"INCHECK"
+    }

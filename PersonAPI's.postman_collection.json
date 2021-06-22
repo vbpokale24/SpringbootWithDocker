@@ -1,0 +1,208 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PersonAPI's",
+		"_postman_id": "027e1c12-fe4f-2fac-e543-eaf055abee4a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAuthToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"pm.globals.set(\"subjectToken\", data.subjectToken);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/securitymanagement/v1/getJwtToken",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Basic",
+						"value": "c2VjdXJpdHlBZG1pbg==",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "This will generate the Authorization token"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Person",
+			"request": {
+				"url": "http://localhost:8080/personmanagement/v1/person",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNjE0MTY4MzUyLCJzdWIiOiJBdXRob3JpemF0aW9uIiwiaXNzIjoiQWRtaW4iLCJleHAiOjE2MTQxNzE4MDh9.rU1uIoYt3kK0SM9Ks66qAlHjWAIRGqjg1icsjtv-UEk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n      \"firstName\": \"Vaibhav\",\r\n      \"lastName\": \"Pokale\",\r\n      \"age\": \"29\",\r\n      \"favouriteColor\": \"Blue\",\r\n      \"hobby\": [\r\n        \"Chess\",\r\n        \"Cricket\",\r\n\t\t\t\t\"Foorball\"\r\n      ]\r\n    }"
+				},
+				"description": "This will generate the Authorization token"
+			},
+			"response": []
+		},
+		{
+			"name": "GetPersonByID",
+			"request": {
+				"url": "http://localhost:8080/personmanagement/v1/person/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNjE0MTY4MzUyLCJzdWIiOiJBdXRob3JpemF0aW9uIiwiaXNzIjoiQWRtaW4iLCJleHAiOjE2MTQxNzE4MDh9.rU1uIoYt3kK0SM9Ks66qAlHjWAIRGqjg1icsjtv-UEk",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "This will generate the Authorization token"
+			},
+			"response": []
+		},
+		{
+			"name": "Change Status",
+			"request": {
+				"url": "http://localhost:8080/personmanagement/v1/person/1",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNjE0MTY4MzUyLCJzdWIiOiJBdXRob3JpemF0aW9uIiwiaXNzIjoiQWRtaW4iLCJleHAiOjE2MTQxNzE4MDh9.rU1uIoYt3kK0SM9Ks66qAlHjWAIRGqjg1icsjtv-UEk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"state\":\"INCHECK\"\r\n}"
+				},
+				"description": "This will generate the Authorization token"
+			},
+			"response": []
+		},
+		{
+			"name": "PatchPersonByID",
+			"request": {
+				"url": "http://localhost:8080/personmanagement/v1/person/1",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNjE0MTY4MzUyLCJzdWIiOiJBdXRob3JpemF0aW9uIiwiaXNzIjoiQWRtaW4iLCJleHAiOjE2MTQxNzE4MDh9.rU1uIoYt3kK0SM9Ks66qAlHjWAIRGqjg1icsjtv-UEk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n      \"state\":\"INCHECK\",\r\n      \"firstName\": \"Vaibhav\",\r\n      \"lastName\": \"Pokale\",\r\n      \"age\": \"37\",\r\n      \"favouriteColor\": \"Blue\",\r\n      \"hobby\": [\r\n        \"Chess\",\r\n        \"Cricket\",\r\n\t\t\t\t\"Patang\"\r\n      ]\r\n    }\r\n "
+				},
+				"description": "This will generate the Authorization token"
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePersonByID",
+			"request": {
+				"url": "http://localhost:8080/personmanagement/v1/person/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNjE0MTY4MzUyLCJzdWIiOiJBdXRob3JpemF0aW9uIiwiaXNzIjoiQWRtaW4iLCJleHAiOjE2MTQxNzE4MDh9.rU1uIoYt3kK0SM9Ks66qAlHjWAIRGqjg1icsjtv-UEk",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "This will generate the Authorization token"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllPerson",
+			"request": {
+				"url": "http://localhost:8080/personmanagement/v1/person",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNjE0MTY4MzUyLCJzdWIiOiJBdXRob3JpemF0aW9uIiwiaXNzIjoiQWRtaW4iLCJleHAiOjE2MTQxNzE4MDh9.rU1uIoYt3kK0SM9Ks66qAlHjWAIRGqjg1icsjtv-UEk",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "This will generate the Authorization token"
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator",
+			"request": {
+				"url": "http://localhost:8080/actuator",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTgwMTQxMTcyLCJzdWIiOiJBdXRob3JpemF0aW9uIiwiaXNzIjoiQWRtaW4iLCJleHAiOjE1ODAxNDQ2Mjl9.0LI6mFAJBtwB51GxCYYH9kBH4oiRZ306mJw2KnJnVyg",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "This will generate the Authorization token"
+			},
+			"response": []
+		}
+	]
+}

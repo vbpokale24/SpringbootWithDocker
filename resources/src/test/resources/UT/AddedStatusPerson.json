@@ -1,0 +1,13 @@
+
+    {
+      "firstName": "Vaibhav",
+      "lastName": "Vaibhav",
+      "age": "29",
+      "favouriteColor": "Blue",
+      "hobby": [
+        "Chess",
+        "Cricket",
+				"Foorball"
+      ],
+      "state":"ADDED"
+    }
